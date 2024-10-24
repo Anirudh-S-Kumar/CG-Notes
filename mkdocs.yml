@@ -93,3 +93,4 @@ nav:
     - Colors: cg/colors.md
     - Lighting and Shading: cg/lighting.md
     - Ray Tracing : cg/ray_tracing.md
+    - Advanced Ray Tracing: cg/advanced_ray_tracing.md
