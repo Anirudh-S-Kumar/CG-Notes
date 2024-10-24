@@ -50,7 +50,7 @@ for each pixel in the image:
     <figcaption>Orthographic Rays</figcaption>
 </figure>
 
-- $l$ and $r$ are left and right limits of the image plane (measured along $\mathbf{u} $) $l < 0 < r$
+- $l$ and $r$ are left and right limits of the image plane (measured along $\mathbf{u}$) $l < 0 < r$
 - $b$ and $t$ are bottom and top limits of the image plane (measured along $\mathbf{v}$) $b < 0 < t$
 
 Pixel spacing for $n_x \times n_y$ image is
@@ -94,7 +94,7 @@ Where $u, v$ are the coordinates of the pixel in the image plane w.r.t origin $e
 ## Ray intersection
 
 - Given a generated ray $p(t) = e + t \cdot d$, find intersection (first hit) with the scene geometry such that $t > 0$
-- Given a ray $p(t) = e + t \cdot d$, and an implcit surface $f(p) = 0$, the intersection point is found by solving $f(e + t \cdot d) = 0$ 
+- Given a ray $p(t) = e + t \cdot d$, and an implicit surface $f(p) = 0$, the intersection point is found by solving $f(e + t \cdot d) = 0$ 
 - There can be multiple solutions for $t$, but we are interested in the smallest positive solution
 
 ### For Sphere
@@ -183,7 +183,7 @@ $$
 
 ### Ray-Polygon Intersection
 
-Givem $m$ vertices $p_1, p_2, \ldots, p_m$ of a polygon and surface normal $n$
+Given $m$ vertices $p_1, p_2, \ldots, p_m$ of a polygon and surface normal $n$
 - Compute the intersection point between ray $\mathbf{e} + t \mathbf{d}$ and the plane containing the polygon $(p - p_1) \cdot n = 0$
 
 $$t = \frac{(p_1 - e) \cdot n}{d \cdot n}$$
@@ -216,4 +216,132 @@ $$t = \frac{(p_1 - e) \cdot n}{d \cdot n}$$
     ![Winding Number Algorithm](images/winding_number_algo.png){ width="400" }
     <figcaption>Winding Number Algorithm</figcaption>
 </figure>
+
+## Shading and Lighting
+
+### Intersection with Multiple Objects
+
+Typically, a scene will contain multiple objects. To find the first object hit by the ray, we need to find the smallest positive $t$ value
+
+```python
+t_min = infinity
+firstSurface = None
+for each object in the surfaceList:
+    hitSurface, t = object.intersect(ray)
+    if hitSurface != None and t < t_min:
+        t_min = t
+        firstSurface = hitSurface
+
+return firstSurface, t_min
+```
+
+### Shading 
+
+We have already read about the Phong reflection model in the [Lighting](../lighting/#phong-reflection-model) section. We can use the same model to shade the pixel, so our algorithm becomes as follows
+
+```python
+def Scene::trace(ray, t_min, t_max):
+    surface, t = surfaces.intersect(ray, t_min, t_max)
+    if surface == None:
+        return background_color
+    else:
+        return surface.shade(ray, t, light)
+
+def Surface::shade(ray, t, light):
+    p = ray.origin + t * ray.direction
+    n = surface_normal(p)
+    v = normalize(ray.origin - p)
+    l = normalize(light.position - p)
+    h = normalize(v + l)
+    # compute ambient, diffuse and specular components
+```
+
+The shading algorithm can be changed for multiple light sources as well
+
+### Casting Shadows
+
+- Surface is illuminated if nothing blocks the view of the light source
+- To check if a point is in shadow, we can cast a ray from the point to the light source 
+    and check if it intersects any object
+- As many rays need to be cast as there are light sources
+- Ideally test $t \in [0, \infty]$, but to account for floating point errors, test $t \in [0 + \epsilon, \infty]$ where $\epsilon$ is a small positive number
+
+```python
+def Surface::shade(ray, t, lights):
+    p = ray.origin + t * ray.direction
+    n = surface_normal(p)
+    v = normalize(ray.origin - p)
+    for each light in lights:
+        l = normalize(light.position - p)
+        h = normalize(v + l)
+        shadowRay = Ray(p, l)
+        if inShadow(shadowRay):
+            # point is in shadow
+            return ambient
+        else:
+            # compute ambient, diffuse and specular components
+            return shading
+```
+
+### Specular Reflections
+- Mirror reflections can be added by shading reflected rays $r = d - 2(d \cdot n)n$
+- Some energy is lost in each reflection, so we can recursively 
+  
+$$ c = c + k_m \text{raycolor}(p + tr, \epsilon, \infty)$$
+
+- $k_m$ is specular RGB color for mirror reflection
+- Trace reflected rays for materials that are specular
+- Recursion depth can be limited to avoid infinite recursion
+
+### Refraction and Transparency
+
+- Compute refracted ray as following
+
+$$t = \frac{n_1}{n_2} (d - (d \cdot n)n) - n \sqrt{1 - (\frac{n_1}{n_2})^2 (1 - (d \cdot n)^2)}$$
+
+#### Total Internal Reflection
+
+- Happens when light travels from denser to rarer medium at an angle greater than the critical angle
+- Critical angle $\cos (\theta_c) = \frac{n_2}{n_1}$
+
+#### Schlick's Approximation
+
+- Approximates the Fresnel equations for reflection and refraction
+
+$$R = R_0 + (1 - R_0) (1 - \cos \theta)^5, \hspace{20px} R_0 = \left( \frac{n_1 - n_2}{n_1 + n_2} \right)^2$$
+
+#### Beer's Law
+
+- For homogeneous impurities in a dielectric, a light carrying ray's intensity attenuates as per Beer's law
+- Loss of intensity in the medium $dI = -C I dx$
+- Solution: $I = k' + k e^{-C x}$ with boundary conditions $I(s) = I_0 e^{s\ln(a)}$
+- $s$ is distance from interface, and $a$ is attenuation constant
+
+### Putting it all together
+
+```python
+def Surface::shade(ray, point, normal, lights):
+    if point is on a dielectric:
+        r = reflect(ray, normal)
+        if dot(ray, normal) < 0: # entering a dielectric
+            c = -dot(ray, normal)
+            k_r = k_g = k_b = 1
+        else:
+            # apply Beer's law
+            k_r = expo(-a_r * t)
+            k_g = expo(-a_g * t)
+            k_b = expo(-a_b * t)
+
+            if refract(ray, -normal, 1/eta, t):
+                c = dot(t, normal)
+            else:
+                return k * Scene::trace(r, point, epsilon, infinity)
+        
+        R_0 = ((eta - 1) / (eta + 1)) ** 2
+        R = R_0 + (1 - R_0) * (1 - c) ** 5
+        return k * (
+                R * Scene::trace(r, point, epsilon, infinity) + \
+                (1 - R) * Scene::trace(t, point, epsilon, infinity)
+            )
+```
 
