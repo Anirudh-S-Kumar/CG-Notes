@@ -256,3 +256,4 @@ Regular Grid division simply divides space into a grid and assigns objects to th
 <figure markdown="span">
     ![kd-tree](images/kd-tree.png){ width="400" }
   <figcaption>kd-tree</figcaption>
+</figure>
