@@ -96,3 +96,4 @@ nav:
     - Advanced Ray Tracing: cg/advanced_ray_tracing.md
     - Rasterization: cg/rasterization.md
     - Texture Mapping: cg/texture_mapping.md
+    - Visibility Determination: cg/visibility_determination.md
