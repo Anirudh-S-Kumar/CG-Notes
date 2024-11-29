@@ -29,7 +29,7 @@ theme:
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
+      primary: indigo
       accent: indigo
 
     
@@ -97,3 +97,4 @@ nav:
     - Rasterization: cg/rasterization.md
     - Texture Mapping: cg/texture_mapping.md
     - Visibility Determination: cg/visibility_determination.md
+    - Implicit Modelling and Reconstruction: cg/implicit_modelling.md
