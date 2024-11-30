@@ -98,3 +98,4 @@ nav:
     - Texture Mapping: cg/texture_mapping.md
     - Visibility Determination: cg/visibility_determination.md
     - Implicit Modelling and Reconstruction: cg/implicit_modelling.md
+    - Animation: cg/animations.md
