@@ -133,3 +133,43 @@ Measures the company's market value. It answers: Is the company's stock overvalu
 - EBIT: Earnings Before Interest and Taxes
 - Depreciation: The decrease in value of an asset over time
 - Amortization: The paying off of debt with a fixed repayment schedule in regular installments over a period of time
+
+## Du Pont Analysis
+
+A method of performance measurement that was started by the DuPont Corporation in the 1920s. It is used to analyze the profitability of a company. The DuPont analysis is a useful technique used to decompose the different drivers of return on equity (ROE). The ROE can be broken down into three components:
+
+- Net Profit Margin
+- Total Asset Turnover
+- Equity Multiplier (Total Assets/Common Equity)
+
+$$
+\begin{align*}
+\text{ROE} &= \frac{\text{Net Income}}{\text{Total Equity}} \times \frac{\text{Net Income}}{\text{Total Assets}} \times \frac{\text{Total Assets}}{\text{Total Equity}} \\
+&= \text{Net Profit Margin} \times \text{Total Asset Turnover} \times \text{Equity Multiplier}
+\end{align*}
+$$
+
+## Methods of Inventory Evaluation
+
+| Method | Formula | Description |
+| --- | --- | --- |
+| FIFO | First In, First Out | Assumes that the oldest products in a company's inventory have been sold first and goes by that assumption. |
+| LIFO | Last In, First Out | Assumes that the newest products in a company's inventory have been sold first and goes by that assumption. |
+| Average Cost | $\Large\frac{\text{Cost of Goods Available for Sale}}{\text{Number of Units Available for Sale}}$ | Assumes that the cost of goods sold and ending inventory are valued at the average cost of the goods available for sale. |
+
+
+!!! Example
+    - Company A sells a product (only one unit) for Rs.300 during the year.
+    - It purchased 2 units one on Jan 1 for Rs. 100 and the other for Rs. 200 on Dec 31.
+    - It is in the 40% Tax bracket.
+    - Assume there are no other costs.
+    - What is the impact of different methods on Balance Sheet and Income Statement
+    
+    | | FIFO | LIFO | Average Cost |
+    | --- | --- | --- | --- |
+    | Revenue | 300 | 300 | 300 |
+    | COGS | 100 | 200 | 150 |
+    | EBT | 200 | 100 | 150 |
+    | Taxes | 80 | 40 | 60 |
+    | EAT | 120 | 60 | 90 |
+    | Inventory | 200 | 100 | 150 |
