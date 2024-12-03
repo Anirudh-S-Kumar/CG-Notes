@@ -26,6 +26,15 @@ Where
 | $k_e$ | Cost of equity |
 | $k_{re}$ | Cost of retained earnings |
 
+## Retained Earnings 
+
+Earnings that are not paid out as dividends but are reinvested in the company.
+
+Retained Earning breakpoint is the point at which the cost of retained earnings exceeds the cost of new common equity.
+
+$$\text{RE Breakpoint} = \frac{Addition to retained earnings}{Equity Fraction}$$
+
+Where Equity Fraction is the proportion of equity in the capital structure, and Addition to retained earnings is the amount of earnings retained after paying dividends.
 
 ## Bonds 
 
