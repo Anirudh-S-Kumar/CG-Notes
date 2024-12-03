@@ -98,7 +98,7 @@ Measures how effectively the firm is managing it's assets. They show how efficie
 | Ratio | Formula | Interpretation |
 | --- | --- | --- |
 | Inventory Turnover | $\Large\frac{\text{Sales}}{\text{Inventories}}$ | Measures how many times a company's inventory is sold and replaced over a period. |
-| Accounts Receivable Turnover  | $\Large\frac{\text{Accounts Receivable}}{\text{Average Sales Per Day}}$ | Measures the average number of days it takes for a company to collect payment after a sale has been made. |
+| Accounts Receivable Turnover/Day Sales Outstanding(DSO)  | $\Large\frac{\text{Accounts Receivable}}{\text{Average Sales Per Day}}$ | Measures the average number of days it takes for a company to collect payment after a sale has been made. |
 | Account Payable Turnover | $\Large\frac{\text{Cost of Goods Sold}}{\text{Accounts Payable}}$ | Measures how many times a company pays off its accounts payable over a period. |
 | Fixed Asset Turnover | $\Large\frac{\text{Sales}}{\text{Net Fixed Assets}}$ | Measures how effectively a company is using its fixed assets to generate revenue. |
 | Total Asset Turnover | $\Large\frac{\text{Sales}}{\text{Total Assets}}$ | Measures how effectively a company is using its assets to generate revenue. |   
