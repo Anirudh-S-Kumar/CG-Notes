@@ -434,6 +434,7 @@ This method is rarely used
     | Change in cash | 220 |
 
     | Cash flow indirect | |
+    | - | - |
     | Net income | 175 |
     | Depreciation | 55 |
     | Account Receivables | (310 - 260 = 50) | 
