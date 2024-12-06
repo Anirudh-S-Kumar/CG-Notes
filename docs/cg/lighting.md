@@ -75,7 +75,7 @@ $$L_o(\mathbf{x}, \vec{\omega_o}) = E_o(\mathbf{x}, \vec{\omega_o}) + \int_{\Ome
 
 This is too complicated to understand, so we will reduce it to a simpler form.
 
-- Unknown function $L$ is related to linear operator (integration) on itself + emission function $E$.
+- Unknown function $L$ is related to linear operator (integration) on itself + emission function $E$
 - Discrete
     - Functions $\rightarrow$ Vectors, Linear operators $\rightarrow$ Matrices
     - $L = E + K \cdot L$
@@ -207,7 +207,7 @@ $$I = k_a I_a + \sum_{i=1}^{n} (f_{att} (k_{d_i} L_{d_i} \max(l_i \cdot n, 0)) +
 
 $$h = \frac{l + v}{||l + v||}$$
 
-- Replace $r \cdot v$ with $h \cdot n$ with $n \cdot h$.
+- Replace $r \cdot v$ with $h \cdot n$.
 - Phong highlights will be smaller than before
 
 

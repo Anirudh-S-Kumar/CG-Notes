@@ -121,6 +121,7 @@ Known as "Poly-Curves". Each segment  between two interpolation points is repres
 <figcaption>Two types of interpolation, Linear on the right and Cubic Bezier on the left</figcaption>
 </figure>
 
+
 ### Continuity in Piecewise Curves
 
 Parametric Continuity $C^n$

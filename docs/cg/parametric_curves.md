@@ -19,7 +19,7 @@ Arc-length distance along a curve from point $f(0)$ to $f(v)$:
 
 $$ s = \int_o^v \left|\frac{df(t)}{dt}\right| dt $$
 
-$s# could be used as a natural parameterization for $f$. For $f(s)$, the magnitude of tangent is constant, i.e. $|df(s)/ds| = 1$.
+$s$ could be used as a natural parameterization for $f$. For $f(s)$, the magnitude of tangent is constant, i.e. $|df(s)/ds| = 1$.
 
 ## Curve Representations
 

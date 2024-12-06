@@ -144,7 +144,8 @@ This is a more complex data structure. Each Vertex and Face have a reference to 
 - Start with a vertex
 - Get one of its edges
 - Add the other vertex of the edge to the one ring
-- Set `curr_edge = ePrevL`
+- Switch to the opposite edge
+- Set `curr_edge = ePrevR`
 - Till `curr_edge->v0` is not equal to the first vertex in ring, add it
 - Repeat for `ePrevR`
 
@@ -251,7 +252,7 @@ Half edge is a more compact data structure. Each edge is split into two half edg
 | ---------------- | ------------------------------------------------------ | ----------------------------------------------------------------------- |
 | Face Set         | Static meshes; rendering                               | No explicit connectivity information; data redundancy                   |
 | Indexed Face Set | Simple and efficient storage; Static meshes; rendering | No explicit connectivity information; Not efficient for most algorithms |
-| Winged Edge      | Arbitrary Polygonal Meshes                             | Massive cse distinctions for one-ring traversal                         |
+| Winged Edge      | Arbitrary Polygonal Meshes                             | Massive case distinctions for one-ring traversal                         |
 | Half Edge        | One-ring traversal; explicit representation of edges   | Slow rendering                                                          |
 
 ### Applications of Mesh Data Structures

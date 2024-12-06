@@ -83,6 +83,28 @@ Some Common texture mappings are
 | Mipmapping | Precompute multiple versions of the texture at different resolutions using high-quality filtering, and then do nearest neighbor or bilinear filtering on the mipmap. |
 | Anisotropic | Recognize when a texture is being stretched in one direction more than another and takes larger number of samples to compensate. |
 
+### Bilinear Interpolation
+
+Say we are given a 2D image, and we want to estimate the value of a pixel at a non-integer coordinate. We can use bilinear interpolation to estimate the value of the pixel. 
+
+<figure markdown="span">
+    ![Bilinear Interpolation](images/bilinear_interpol.png){ width=400}
+    <figcaption markdown="span">Bilinear Interpolation</figcaption>
+</figure>
+
+We first start off with finding the value of $y_1$ and $y_2$ using linear interpolation.
+
+$$
+\begin{align*}
+    y_1 &= a + (b - a) \cdot t \\
+    y_2 &= c + (d - c) \cdot t
+\end{align*}
+$$
+
+Then, we interpolate these values across the other axis to get the final value.
+
+$$y = y_1 + (y_2 - y_1) \cdot q$$
+
 ## Texture Synthesis
 
 Procedural texture: little programs that computes color as a function of $(x, y, z)$.

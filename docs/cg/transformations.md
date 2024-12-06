@@ -36,7 +36,9 @@ $$\begin{bmatrix}a & b\\c & d\end{bmatrix} \rightarrow \begin{bmatrix}a & b & 0\
 
 </div>
 
-??? info "Properties of Rotation Matrix"
+!!! info "Properties of Rotation Matrix"
+    - Rows are orthogonal to each other
+    - Columns are orthogonal to each other
     - $\mathbf{R}^\top = \mathbf{R}^{-1}$
     - $\det(\mathbf{R}) = 1$
 
@@ -125,3 +127,19 @@ $$R_a(\phi) = R_{uvw}^\top \hspace{10px} R_z(\phi) \hspace{10px} R_{uvw}$$
 - Let the surface points be transformed by the matrix $\mathbf{M}$. Then the normal vectors are transformed by the the following
 
 $$ \mathbf{N'} = \mathbf{M}^{-\top} \mathbf{N} $$
+
+??? Abstract "Proof of Transforming Normals"
+
+    Say you have a point $p$ and a normal $n$ on a surface. The normal is perpendicular to the surface at that point, i.e.
+
+    $$n^\top p = 0$$
+
+    If we transform the point to $p' = \mathbf{M}p$, then the new normal $n'$ should be perpendicular to the new surface at $p'$, i.e.
+
+    $$n'^\top p' = 0$$
+
+    Let the new normal be $n' = \mathbf{N}n$. Then,
+
+    $$n'^\top p' = (\mathbf{N}n)^\top \mathbf{M}p = n^\top \mathbf{N}^\top \mathbf{M}p = 0 $$
+
+    Since we already know that $n^\top p = 0$, we can say that $\mathbf{N}^\top \mathbf{M} = I$. Hence, $\mathbf{N} = \mathbf{M}^{-\top}$.

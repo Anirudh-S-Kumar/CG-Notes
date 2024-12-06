@@ -84,7 +84,7 @@ Adaptive grid structure where cells are recursively subdivided until a certain c
 #### Construction
 - Top down approach:
     - Fit whole data(geometry) into one bounding cell
-    - If it is mixed $ \rightarrow $ subdivide into 8 children
+    - If it is mixed $\rightarrow$ subdivide into 8 children
     - Repeat recursively until there is nothing more to subdivide
 - Bottom up approach:
     - Create uniform grid with high resolution
