@@ -87,9 +87,9 @@ for each pixel (i, j) in the image:
 
 ## Transformations in Ray Tracing
 
-Either transform object to world coordinates or transform ray to world coordinates.
+Either transform object to world coordinates or transform ray to object coordinates.
 
-Create a wrapper class `TransformedSurface` that takes a surface and a transformation matrix and transforms the ray to world coordinates before intersecting with the surface.
+Create a wrapper class `TransformedSurface` that takes a surface and a transformation matrix and transforms the ray to object coordinates before intersecting with the surface.
 
 ```cpp
 class TransformedSurface : public Surface
@@ -102,7 +102,7 @@ public:
     bool intersect(const Ray& ray);
 ```
 
-To intersect the ray with the transformed surface, transform the ray to world coordinates, intersect with the surface, and then transform the hit point back to object coordinates.
+To intersect the ray with the transformed surface, transform the ray to object coordinates, intersect with the surface, and then transform the hit point back to world coordinates.
 
 ```cpp
 bool TransformedSurface::intersect(const Ray& ray) {

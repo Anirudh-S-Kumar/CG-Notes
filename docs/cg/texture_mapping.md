@@ -33,13 +33,16 @@ Objects have variation in reflectance across surface. A common technique to hand
 
 - Accounts for the actual 3D position of the point on the surface.
 - Screen space interpolation is used to compute $(u, v)$ at each pixel.
+
 $$f_x = (1 - \alpha) \frac{x_0} {w_0} + \alpha \frac{x_1} {w_1}$$
+
 - Perspective correct interpolation of $(u, v)$ is given by
 
 $$f_x = \frac{(1 - \beta) x_0 + \beta x_1} {(1 - \beta) w_0 + \beta w_1}$$
 
 - Post Perspective, use 
-$$ \beta = \frac{\alpha * w_0}{(1 - \alpha) w_1 + \alpha w_0}$$
+
+$$\beta = \frac{\alpha * w_0}{(1 - \alpha) w_1 + \alpha w_0}$$
 
 ## Texture coordinates
 
@@ -51,6 +54,7 @@ How to specify mapping from an object to a texture? It should have the following
 - ==Area Preserving== or ==Angle Preserving==
 
 Some Common texture mappings are 
+
 - Linear/Planar/Hyperplanar Projection
 - Cylindrical 
 - Spherical
@@ -110,6 +114,7 @@ $$y = y_1 + (y_2 - y_1) \cdot q$$
 Procedural texture: little programs that computes color as a function of $(x, y, z)$.
 
 Types of procedural textures
+
 - ==Fourier-like synthesis==
 - ==Perlin noise==
 - Reaction-diffusion textures - Simulating formation of patterns in nature, which evolve through diffusion and reaction.
