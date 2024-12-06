@@ -101,3 +101,4 @@ nav:
     - Visibility Determination: cg/visibility_determination.md
     - Implicit Modelling and Reconstruction: cg/implicit_modelling.md
     - Animation: cg/animations.md
+    - Parametric Curves: cg/parametric_curves.md
