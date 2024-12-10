@@ -27,7 +27,9 @@
 
 - **Flux** ($\Phi(A)$): The amount of light energy passing through a surface per unit time. Unit is watts.
 - **Irradiance** ($E(A)$): Flux per unit area arriving at a surface. Unit is watts per square meter.
+    
 $$E(A) = \frac{d\Phi(A)}{dA(x)}$$
+
 - **Radioisity** ($B(A)$): The total amount of light energy leaving a surface per unit time. Unit is watts.
 
 

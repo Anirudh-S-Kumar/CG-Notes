@@ -8,7 +8,7 @@ Thus, we can divide the animation process into two steps:
 ## Affine Transformations
 
 !!! abstract "Recap"
-    Affine transformations are rotations, translations, and scaling. They are linear transformations that preserve points, straight lines, and planes. They are represented by a 4x4 matrix.
+    Affine transformations are rotations, translations, and scaling. They are linear transformations that preserve points, straight lines, and planes. They are represented by a 4x4 matrix and have the general form $f = \mathbf{A}x + \mathbf{b}$, where $\mathbf{A}$ is an invertible map, and $\mathbf{b}$ is some translation
 
 Transformations in animation can be of two types:
 
@@ -206,7 +206,7 @@ From here, $\alpha + \beta = \psi$, and $v(t) = w_0 v_0 + w_1 v_1$
 
 $$\frac{\sin \alpha}{w_1} = \frac{\sin \beta}{w_0} = \frac{\sin (\pi - \psi)}{1} = \sin \psi$$
 
-From here, we get $w_ = \frac{\sin \beta}{\sin \psi}$ and $w_1 = \frac{\sin \alpha}{\sin \psi}$ and $\psi = \cos^{-1}(v_0 \cdot v_1)$
+From here, we get $w_0 = \frac{\sin \beta}{\sin \psi}$ and $w_1 = \frac{\sin \alpha}{\sin \psi}$ and $\psi = \cos^{-1}(v_0 \cdot v_1)$
 
 Therefore, finally we can write the SLERP as:
 

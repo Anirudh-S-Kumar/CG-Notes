@@ -102,18 +102,9 @@ $$f(p) = \int_S g(r) h(p - r) dr $$
 
 where $h$ has finite support.
 
-!!! note "My Commentary"
-
-    I am having a hard time understanding why we are doing this, but this is what I've gathered so far
-    
-    - we are trying to represent complex geometries using simple primitives. 
-    - The idea is to represent a complex geometry as a sum of simple primitives. 
-    - The primitives are defined by their distance to the skeleton. 
-    - The fall-off filter function is used to blend the primitives together. 
-
 ### Super-elliptic blending
 
-Given two functions $f_A$ and $f_B$, denote a more general blending operator as $A \diamond B $ The Ricchi blend is defined as 
+Given two functions $f_A$ and $f_B$, denote a more general blending operator as $A \diamond B$ The Ricchi blend is defined as 
 
 $$f_{A \diamond B} = \left( f_A^{n} + f_B^n \right)^\frac{1}{n}$$
 
@@ -209,9 +200,9 @@ Constructive Solid Geometry (CSG) is a technique to create complex shapes by com
 
 Distorting the shape of a surface by warping the space in it's neighborhood. A warp is a continuous function $w(x, y, z): \mathbb{R}^3 \to \mathbb{R}^3$. Define the warped by applying $w$ to the implicit equation
 
-$$f_i(p) = g_i \circ d_i \circ w_i(p)$$
+$$f_i(p) = d_i \circ g_i \circ w_i(p)$$
 
-Where $g_i \circ d_i$ is the original implicit function.
+Where $d_i \circ g_i$ is the original implicit function.
 
 Some warps are 
 
