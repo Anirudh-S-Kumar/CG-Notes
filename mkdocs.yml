@@ -1,7 +1,7 @@
 site_name: Compute Graphics Notes 
-site_url: https://anirudh-s-kumar.github.io/misc-notes/
-repo_name: Anirudh-S-Kumar/misc-notes
-repo_url: https://github.com/Anirudh-S-Kumar/misc-notes
+site_url: https://anirudh-s-kumar.github.io/cg-notes/
+repo_name: Anirudh-S-Kumar/cg-notes
+repo_url: https://github.com/Anirudh-S-Kumar/cg-notes
 edit_uri: edit/main/docs/
 theme:
   name: material
