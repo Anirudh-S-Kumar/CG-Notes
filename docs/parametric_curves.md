@@ -1,5 +1,5 @@
 !!! note
-    Please read about [Curves](../cg/curves.md) before reading this article.
+    Please read about [Curves](curves.md) before reading this article.
 
 ## Re-Parametrization of Curves
 

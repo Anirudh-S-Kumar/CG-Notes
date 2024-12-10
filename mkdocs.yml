@@ -1,4 +1,4 @@
-site_name: Notes 
+site_name: Compute Graphics Notes 
 site_url: https://anirudh-s-kumar.github.io/misc-notes/
 repo_name: Anirudh-S-Kumar/misc-notes
 repo_url: https://github.com/Anirudh-S-Kumar/misc-notes
@@ -18,8 +18,8 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.sections
-    - navigation.tabs
-    - navigation.top
+  #  - navigation.tabs
+  #  - navigation.top
     - navigation.tracking
     - search.highlight
     - search.share
@@ -78,27 +78,18 @@ markdown_extensions:
 
 
 nav:
-  - Foundations of Finance:
-    - Time Value of Money: ff/time_value_money.md
-    - Analysis of Financial Statements: ff/financial_statements.md
-    - Ratio Analysis: ff/ratio_analysis.md
-    - Capital Budgeting: ff/capital_budgeting.md
-    - Cost of Capital: ff/cost_of_capital.md
-
-  - Computer Graphics:
-    - index: cg/index.md
-    - Curves: cg/curves.md
-    - Surfaces and Volumes: cg/surfaces_volumes.md
-    - Mesh: cg/mesh.md
-    - Geometric Transformations: cg/transformations.md
-    - Viewing and Projections: cg/viewing.md
-    - Colors: cg/colors.md
-    - Lighting and Shading: cg/lighting.md
-    - Ray Tracing : cg/ray_tracing.md
-    - Advanced Ray Tracing: cg/advanced_ray_tracing.md
-    - Rasterization: cg/rasterization.md
-    - Texture Mapping: cg/texture_mapping.md
-    - Visibility Determination: cg/visibility_determination.md
-    - Implicit Modelling and Reconstruction: cg/implicit_modelling.md
-    - Animation: cg/animations.md
-    - Parametric Curves: cg/parametric_curves.md
+  - Curves: curves.md
+  - Surfaces and Volumes: surfaces_volumes.md
+  - Mesh: mesh.md
+  - Geometric Transformations: transformations.md
+  - Viewing and Projections: viewing.md
+  - Colors: colors.md
+  - Lighting and Shading: lighting.md
+  - Ray Tracing : ray_tracing.md
+  - Advanced Ray Tracing: advanced_ray_tracing.md
+  - Rasterization: rasterization.md
+  - Texture Mapping: texture_mapping.md
+  - Visibility Determination: visibility_determination.md
+  - Implicit Modelling and Reconstruction: implicit_modelling.md
+  - Animation: animations.md
+  - Parametric Curves: parametric_curves.md

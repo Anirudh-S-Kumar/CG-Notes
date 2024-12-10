@@ -237,7 +237,7 @@ return firstSurface, t_min
 
 ### Shading 
 
-We have already read about the Phong reflection model in the [Lighting](../lighting/#phong-reflection-model) section. We can use the same model to shade the pixel, so our algorithm becomes as follows
+We have already read about the Phong reflection model in the [Lighting](lighting.md#phong-reflection-model) section. We can use the same model to shade the pixel, so our algorithm becomes as follows
 
 ```python
 def Scene::trace(ray, t_min, t_max):
